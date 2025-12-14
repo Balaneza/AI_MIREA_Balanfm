@@ -30,12 +30,16 @@ class ColumnSummary:
 class DatasetSummary:
     n_rows: int
     n_cols: int
+    n_zero_values: float
+    constant_colums: int
     columns: List[ColumnSummary]
 
     def to_dict(self) -> Dict[str, Any]:
         return {
             "n_rows": self.n_rows,
             "n_cols": self.n_cols,
+            "constant_colums": self.constant_colums,
+            "n_zero_values": self.n_zero_values,
             "columns": [c.to_dict() for c in self.columns],
         }
 
@@ -55,6 +59,8 @@ def summarize_dataset(
     """
     n_rows, n_cols = df.shape
     columns: List[ColumnSummary] = []
+    n_zero_values = 0.0
+    constant_colums = 0
 
     for name in df.columns:
         s = df[name]
@@ -78,11 +84,19 @@ def summarize_dataset(
         mean_val: Optional[float] = None
         std_val: Optional[float] = None
 
+        if non_null > 0 and unique ==1:
+            constant_colums +=1
+
         if is_numeric and non_null > 0:
             min_val = float(s.min())
             max_val = float(s.max())
             mean_val = float(s.mean())
             std_val = float(s.std())
+            zero_c = (s == 0).sum()
+            cur_zero_share = zero_c / non_null
+            if cur_zero_share > n_zero_values:
+                n_zero_values = cur_zero_share
+
 
         columns.append(
             ColumnSummary(
@@ -101,7 +115,7 @@ def summarize_dataset(
             )
         )
 
-    return DatasetSummary(n_rows=n_rows, n_cols=n_cols, columns=columns)
+    return DatasetSummary(n_rows=n_rows, n_cols=n_cols, n_zero_values=n_zero_values, constant_colums=constant_colums, columns=columns)
 
 
 def missing_table(df: pd.DataFrame) -> pd.DataFrame:
@@ -184,10 +198,16 @@ def compute_quality_flags(summary: DatasetSummary, missing_df: pd.DataFrame) -> 
     max_missing_share = float(missing_df["missing_share"].max()) if not missing_df.empty else 0.0
     flags["max_missing_share"] = max_missing_share
     flags["too_many_missing"] = max_missing_share > 0.5
-
+    flags["has_constant_columns"] = summary.constant_colums > 0
+    flags["has_many_zero_values"] = summary.n_zero_values > 0.5
+    has = float(missing_df["missing_share"].max()) if not missing_df.empty else 0.0
     # Простейший «скор» качества
     score = 1.0
     score -= max_missing_share  # чем больше пропусков, тем хуже
+    if summary.n_zero_values > 0.5:
+        score -= 0.2
+    if summary.constant_colums > 0:
+        score -= 0.05
     if summary.n_rows < 100:
         score -= 0.2
     if summary.n_cols > 100:

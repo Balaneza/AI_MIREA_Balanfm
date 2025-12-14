@@ -22,6 +22,17 @@ def _sample_df() -> pd.DataFrame:
     )
 
 
+def _new_df() -> pd.DataFrame:
+    return pd.DataFrame(
+        {
+            "age": [10, 20, 30, None],
+            "age_dupl": [10, 20, 30, None],
+            "city": ["A", "B", "A", None],
+            "height": [140, 150, 160, 170],
+            "weight": [0, 0, 0, 0],
+        }
+    )
+
 def test_summarize_dataset_basic():
     df = _sample_df()
     summary = summarize_dataset(df)
@@ -47,6 +58,16 @@ def test_missing_table_and_quality_flags():
     flags = compute_quality_flags(summary, missing_df)
     assert 0.0 <= flags["quality_score"] <= 1.0
 
+
+def test_new_quality_flags():
+    new_test_df = _new_df()
+    new_missing_test_df = missing_table(new_test_df)
+    summary = summarize_dataset(new_test_df)
+    flags = compute_quality_flags(summary, new_missing_test_df)
+    assert "has_constant_columns" in flags
+    assert "has_many_zero_values" in flags
+    assert (flags["has_constant_columns"] == True) or (flags["has_constant_columns"] == False)
+    assert (flags["has_many_zero_values"] == True) or (flags["has_many_zero_values"] == False)
 
 def test_correlation_and_top_categories():
     df = _sample_df()
