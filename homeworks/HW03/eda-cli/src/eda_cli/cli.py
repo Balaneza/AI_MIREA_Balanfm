@@ -113,8 +113,9 @@ def report(
         f.write(f"- Макс. доля пропусков по колонке: **{quality_flags['max_missing_share']:.2%}**\n")
         f.write(f"- Слишком мало строк: **{quality_flags['too_few_rows']}**\n")
         f.write(f"- Слишком много колонок: **{quality_flags['too_many_columns']}**\n")
-        f.write(f"- Слишком много пропусков: **{quality_flags['too_many_missing']}**\n\n")
-
+        f.write(f"- Слишком много пропусков: **{quality_flags['too_many_missing']}**\n")
+        f.write(f"- Имеет повторяющиеся колонки: **{quality_flags['has_constant_columns']}**\n")
+        f.write(f"- Слишком много нулевых значений: **{quality_flags['has_many_zero_values']}**\n\n")
         f.write("## Колонки\n\n")
         f.write("См. файл `summary.csv`.\n\n")
 
