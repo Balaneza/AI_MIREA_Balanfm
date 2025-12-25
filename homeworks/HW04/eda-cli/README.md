@@ -290,8 +290,7 @@ curl -X POST "http://127.0.0.1:8000/quality-flags-from-csv" \
   "quality_score": 0.72,
   "max_missing_share": 0.08
 }
-
----
+```
 
 ## Структура проекта (упрощённо)
 
