@@ -263,6 +263,7 @@ curl -X POST "http://127.0.0.1:8000/quality-from-csv" \
 POST /quality-flags-from-csv
 Content-Type: multipart/form-data
 file: <CSV-файл>
+```
 
 Через Swagger:
 
@@ -280,6 +281,7 @@ curl -X POST "http://127.0.0.1:8000/quality-flags-from-csv" \
 
 **Пример ответа `200 OK`:**
 
+```json
 {
   "too_few_rows": false,
   "too_many_missing": false,
