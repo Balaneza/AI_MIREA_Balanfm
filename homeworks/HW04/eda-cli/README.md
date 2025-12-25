@@ -247,6 +247,50 @@ curl -X POST "http://127.0.0.1:8000/quality-from-csv" \
 
 ---
 
+### 5. `POST /quality-flags-from-csv` – оценка качества по CSV-файлу с использованием EDA-ядра
+
+Эндпоинт принимает **CSV-файл**, загружает его в `pandas.DataFrame`, применяет функции из `eda_cli.core`:
+
+- `summarize_dataset`,
+- `missing_table`,
+- `compute_quality_flags`,
+
+и возвращает **структурированные флаги качества данных** в формате JSON.
+
+**Запрос:**
+
+```http
+POST /quality-flags-from-csv
+Content-Type: multipart/form-data
+file: <CSV-файл>
+
+Через Swagger:
+
+- в `/docs` открыть `POST /quality-from-csv`,
+- нажать `Try it out`,
+- выбрать файл (например, `data/example.csv`),
+- нажать `Execute`.
+
+**Пример вызова через `curl` (Linux/macOS/WSL):**
+
+```bash
+curl -X POST "http://127.0.0.1:8000/quality-flags-from-csv" \
+  -F "file=@data/sample.csv"
+```
+
+**Пример ответа `200 OK`:**
+
+{
+  "too_few_rows": false,
+  "too_many_missing": false,
+  "has_constant_columns": true,
+  "has_many_zero_values": false,
+  "quality_score": 0.72,
+  "max_missing_share": 0.08
+}
+
+---
+
 ## Структура проекта (упрощённо)
 
 ```text
