@@ -1,0 +1,24 @@
+{
+    "dataset_01": {
+        "best_model": "KMeans",
+        "params": {
+            "n_clusters": 2
+        },
+        "selection_metric": "silhouette score"
+    },
+    "dataset_02": {
+        "best_model": "DBSCAN",
+        "params": {
+            "eps": 0.7,
+            "min_samples": 15
+        },
+        "selection_metric": "silhouette score (non-noise points for DBSCAN)"
+    },
+    "dataset_03": {
+        "best_model": "KMeans",
+        "params": {
+            "n_clusters": 3
+        },
+        "selection_metric": "silhouette score (non-noise points for DBSCAN)"
+    }
+}
