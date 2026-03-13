@@ -1,6 +1,6 @@
 {
   "dataset": "KMNIST",
-  "seed": 42,
+  "seed": 7,
   "model_config": {
     "hidden_sizes": [
       512,
@@ -15,5 +15,5 @@
     "lr": 0.001,
     "weight_decay": 0
   },
-  "epochs_trained": 13
+  "epochs_trained": 17
 }
