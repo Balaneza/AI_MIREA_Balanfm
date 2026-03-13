@@ -15,5 +15,5 @@
     "lr": 0.001,
     "weight_decay": 0
   },
-  "epochs_trained": 17
+  "epochs_trained": 13
 }
