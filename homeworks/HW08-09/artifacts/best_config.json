@@ -1,0 +1,19 @@
+{
+  "dataset": "KMNIST",
+  "seed": 42,
+  "model_config": {
+    "hidden_sizes": [
+      512,
+      256,
+      128
+    ],
+    "use_dropout": false,
+    "use_bn": true
+  },
+  "opt_config": {
+    "type": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0
+  },
+  "epochs_trained": 13
+}
