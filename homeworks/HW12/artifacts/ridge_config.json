@@ -1,0 +1,24 @@
+{
+  "model": "Ridge",
+  "alpha": 1.0,
+  "seed": 42,
+  "features": [
+    "lag_1",
+    "lag_7",
+    "lag_14",
+    "rolling_mean_7",
+    "rolling_std_7",
+    "dow",
+    "hour",
+    "month",
+    "is_weekend",
+    "dow_sin",
+    "dow_cos",
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos"
+  ],
+  "dataset": "S12-hw-dataset.csv",
+  "split_summary": "train=3024, val=648, test=648"
+}
