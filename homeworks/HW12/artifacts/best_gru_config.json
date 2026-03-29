@@ -2,5 +2,13 @@
   "model": "GRU",
   "hidden_size": 64,
   "window_size": 24,
-  "epochs": 10
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "epochs": 10,
+  "seed": 42,
+  "scaler": "StandardScaler",
+  "scaler_fit_on": "train_only",
+  "optimizer": "Adam",
+  "dataset": "S12-hw-dataset.csv",
+  "split_summary": "train=3024, val=648, test=648"
 }
