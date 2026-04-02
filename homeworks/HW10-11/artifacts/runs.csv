@@ -1,7 +1,7 @@
 experiment_id,task,dataset,seed,model_summary,optimizer,lr,epochs_trained,best_val_accuracy,test_accuracy,precision,recall,mean_iou,notes
-C1,classification,STL10,42,SimpleCNN (~1.4M params),Adam,0.0003,40,0.644,,,,,no aug
-C2,classification,STL10,42,SimpleCNN (~1.4M params),Adam,0.0003,40,0.592,,,,,hflip+crop+colorjitter+grayscale
-C3,classification,STL10,42,ResNet18 pretrained; fc only,Adam,0.001,15,0.949,,,,,backbone frozen; fc only
-C4,classification,STL10,42,ResNet18 pretrained; layer4+fc,Adam,0.0001,12,0.956,0.9524,,,,layer4+fc unfrozen; aug train; BEST MODEL
+C1,classification,STL10,42,SimpleCNN (~1.4M params),Adam,0.0003,40,0.644,0.6289,,,,no aug
+C2,classification,STL10,42,SimpleCNN (~1.4M params),Adam,0.0003,40,0.592,0.5843,,,,hflip+crop+colorjitter+grayscale
+C3,classification,STL10,42,ResNet18 pretrained; fc only,Adam,0.001,15,0.949,0.9426,,,,backbone frozen; fc only
+C4,classification,STL10,42,ResNet18 pretrained; layer4+fc,Adam,0.0001,12,0.956,0.9524,,,,layer4+fc unfrozen; aug train
 V1,segmentation,OxfordIIITPet,42,DeepLabV3_ResNet50 (COCO_WITH_VOC_LABELS_V1),,,0,,,0.526,0.7048,0.5226,"argmax; fg=cat|dog (COCO 12,17)"
 V2,segmentation,OxfordIIITPet,42,DeepLabV3_ResNet50 (COCO_WITH_VOC_LABELS_V1),,,0,,,0.5266,0.7047,0.5231,remove comps < 1003px (224x224)
