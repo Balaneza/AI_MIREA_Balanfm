@@ -13,5 +13,11 @@
   "epochs_trained": 12,
   "best_val_accuracy": 0.956,
   "test_accuracy": 0.9524,
+  "transforms": {
+    "train": "transform_resnet_aug",
+    "val_test": "transform_resnet"
+  },
+  "preprocess": "Resize(224) + ToTensor + Normalize(ImageNet mean/std)",
+  "augmentation": "RandomHorizontalFlip + RandomCrop(padding=12) + ColorJitter + RandomGrayscale",
   "notes": "layer4+fc unfrozen; aug train"
 }
