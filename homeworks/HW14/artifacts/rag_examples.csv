@@ -1,0 +1,46 @@
+question,answer,retrieved_sources,relevance_score
+What is gradient boosting and how does it work?,"Based on the knowledge base:
+
+From 'Gradient Boosting': Gradient Boosting. Gradient Boosting is an ensemble technique that sequentially builds an ensemble of weak learners (usually trees) to correct errors made by previous learners. Each new learner is tra
+From 'Gradient Boosting': made by previous learners. Each new learner is trained on the residuals of the previous ensemble. Gradient Boosting often achieves state-of-the-art performance on tabular data and handles various loss
+From 'Ensemble Methods and Stacking': subsets. Boosting sequentially trains models to correct previous errors. Stacking uses a meta-learner to combine base model predictions. Ensemble methods often outperform individual models by reducing
+
+Summary: The relevant documents discuss Gradient Boosting, 
+which provides information about your query on 'What is gradient boosting and how does it work?...'. 
+For more details, refer to the source documents listed below.",Gradient Boosting (doc_09); Gradient Boosting (doc_09); Ensemble Methods and Stacking (doc_21),0.997
+Explain the difference between clustering and classification.,"Based on the knowledge base:
+
+From 'K-Means Clustering': K-Means Clustering. K-Means is an unsupervised learning algorithm for clustering data into k clusters. It iteratively assigns each point to the nearest centroid and updates centroids as the mean of as
+From 'Hierarchical Clustering': Hierarchical Clustering. Hierarchical clustering builds a tree of clusters (dendrogram) by either merging small clusters into larger ones (agglomerative) or splitting large clusters (divisive). Common
+From 'Hierarchical Clustering': uire specifying k beforehand and provides a full hierarchy of clusters at different granularities. However, it is computationally expensive for large datasets compared to K-Means.
+
+Summary: The relevant documents discuss K-Means Clustering, 
+which provides information about your query on 'Explain the difference between clustering and clas...'. 
+For more details, refer to the source documents listed below.",K-Means Clustering (doc_06); Hierarchical Clustering (doc_07); Hierarchical Clustering (doc_07),0.991
+How are autoencoders used in machine learning?,"Based on the knowledge base:
+
+From 'Autoencoders and Unsupervised Learning': Autoencoders and Unsupervised Learning. Autoencoders are neural networks that learn compressed representations by reconstructing their input. They consist of encoder and decoder components. Autoencode
+From 'Autoencoders and Unsupervised Learning': sist of encoder and decoder components. Autoencoders are useful for dimensionality reduction, anomaly detection, and feature learning. Variational Autoencoders (VAE) add a probabilistic interpretation
+From 'Autoencoders and Unsupervised Learning':  Autoencoders are versatile unsupervised learning tools applicable to many domains.
+
+Summary: The relevant documents discuss Autoencoders and Unsupervised Learning, 
+which provides information about your query on 'How are autoencoders used in machine learning?...'. 
+For more details, refer to the source documents listed below.",Autoencoders and Unsupervised Learning (doc_22); Autoencoders and Unsupervised Learning (doc_22); Autoencoders and Unsupervised Learning (doc_22),0.995
+What are the advantages of transfer learning?,"Based on the knowledge base:
+
+From 'Transfer Learning': Transfer Learning. Transfer learning involves using a model pre-trained on a large dataset and fine-tuning it for a different but related task. This approach leverages knowledge learned from source ta
+From 'Transfer Learning':  for NLP. Transfer learning reduces training time and improves generalization, especially with small datasets.
+From 'Transfer Learning': sk has limited labeled data. Common applications include using ImageNet-trained models for computer vision and pre-trained language models (BERT, GPT) for NLP. Transfer learning reduces training time 
+
+Summary: The relevant documents discuss Transfer Learning, 
+which provides information about your query on 'What are the advantages of transfer learning?...'. 
+For more details, refer to the source documents listed below.",Transfer Learning (doc_14); Transfer Learning (doc_14); Transfer Learning (doc_14),0.992
+Describe the role of attention mechanisms in transformers.,"Based on the knowledge base:
+
+From 'Transformers and Attention Mechanisms': Transformers and Attention Mechanisms. Transformers are a neural network architecture based on self-attention mechanisms that allow the model to weigh the importance of different parts of the input. U
+From 'Transformers and Attention Mechanisms':  the importance of different parts of the input. Unlike RNNs, transformers process sequences in parallel, making them faster to train. The attention mechanism computes weighted combinations of values 
+From 'Transformers and Attention Mechanisms': n NLP (BERT, GPT) and computer vision (Vision Transformer). The self-attention mechanism enables the model to capture long-range dependencies effectively.
+
+Summary: The relevant documents discuss Transformers and Attention Mechanisms, 
+which provides information about your query on 'Describe the role of attention mechanisms in trans...'. 
+For more details, refer to the source documents listed below.",Transformers and Attention Mechanisms (doc_13); Transformers and Attention Mechanisms (doc_13); Transformers and Attention Mechanisms (doc_13),0.996
