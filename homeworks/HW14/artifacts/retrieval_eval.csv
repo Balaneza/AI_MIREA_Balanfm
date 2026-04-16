@@ -1,10 +1,10 @@
-query,expected_docs,retrieved_sources,hit_at_k,recall_at_k,rank_of_first_relevant
+query,expected_source,retrieved_sources,hit_at_k,recall_at_k,rank_of_first_relevant
 How do linear and logistic regression differ?,"doc_02, doc_01",Logistic Regression(doc_02) | Linear Regression(doc_01) | Logistic Regression(doc_02) | Linear Regression(doc_01) | Linear Regression(doc_01),1,1.0,1
 Explain decision trees and tree-based ensembles,"doc_09, doc_03, doc_04",Decision Trees(doc_03) | Random Forests(doc_04) | Decision Trees(doc_03) | Random Forests(doc_04) | Decision Trees(doc_03),1,0.6666666666666666,1
 What is support vector machine?,doc_05,Support Vector Machines(doc_05) | Support Vector Machines(doc_05) | Gradient Boosting(doc_09) | Cross-Validation(doc_15) | Decision Trees(doc_03),1,1.0,1
 Clustering methods: K-means and hierarchical,"doc_07, doc_06",K-Means Clustering(doc_06) | Hierarchical Clustering(doc_07) | Hierarchical Clustering(doc_07) | Hierarchical Clustering(doc_07) | K-Means Clustering(doc_06),1,1.0,1
 Dimensionality reduction techniques,doc_08,Support Vector Machines(doc_05) | Principal Component Analysis(doc_08) | Support Vector Machines(doc_05) | Support Vector Machines(doc_05) | Principal Component Analysis(doc_08),1,1.0,2
-Deep learning with neural networks and convolutional networks,"doc_09, doc_10, doc_11",Convolutional Neural Networks(doc_11) | Neural Networks(doc_10) | Neural Networks(doc_10) | Convolutional Neural Networks(doc_11) | Convolutional Neural Networks(doc_11),1,0.6666666666666666,1
+Deep learning with neural networks and convolutional networks,"doc_10, doc_09, doc_11",Convolutional Neural Networks(doc_11) | Neural Networks(doc_10) | Neural Networks(doc_10) | Convolutional Neural Networks(doc_11) | Convolutional Neural Networks(doc_11),1,0.6666666666666666,1
 Recurrent neural networks for sequences,doc_12,Recurrent Neural Networks(doc_12) | Recurrent Neural Networks(doc_12) | Recurrent Neural Networks(doc_12) | Recurrent Neural Networks(doc_12) | Transformers and Attention Mechanisms(doc_13),1,1.0,1
 Attention & transformers in deep learning,doc_13,Transformers and Attention Mechanisms(doc_13) | Transformers and Attention Mechanisms(doc_13) | Transformers and Attention Mechanisms(doc_13) | Neural Networks(doc_10) | Word Embeddings and Word2Vec(doc_20),1,1.0,1
 How to reuse models with transfer learning,doc_14,Transfer Learning(doc_14) | Transfer Learning(doc_14) | Transfer Learning(doc_14) | Transfer Learning(doc_14) | Word Embeddings and Word2Vec(doc_20),1,1.0,1
