@@ -1,0 +1,26 @@
+project:
+  name: aps-failure-scania
+  random_state: 42
+
+data:
+  train_path: data/raw/aps_failure_training_set.csv
+  test_path: data/raw/aps_failure_test_set.csv
+  description_path: data/raw/aps_failure_description.txt
+  target_column: class
+  positive_label: pos
+  negative_label: neg
+  validation_size: 0.2
+
+costs:
+  false_positive: 10
+  false_negative: 500
+
+training:
+  n_jobs: -1
+  permutation_repeats: 5
+  permutation_max_samples: 3000
+
+service:
+  default_model_path: artifacts/best_model.joblib
+  host: 0.0.0.0
+  port: 8000

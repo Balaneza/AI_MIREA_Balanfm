@@ -1,23 +1,18 @@
 # Исходный код проекта
 
-В этой папке размещается **основной код проекта**, который используется для:
+Команды запуска из папки `project/`:
 
-- подготовки данных;
-- обучения моделей;
-- инференса (получения предсказаний);
-- запуска сервисов (API/CLI/скриптов).
+```bash
+.venv/bin/python -m src.train
+.venv/bin/uvicorn src.service:app --host 0.0.0.0 --port 8000
+```
 
-Примеры того, как можно организовать код (не обязательно строго так, но рекомендуется):
+Основные модули:
 
-- `src/data/` — загрузка и подготовка данных;
-- `src/features/` — генерация и трансформация признаков;
-- `src/models/` — обучение и применение моделей;
-- `src/service/` — запуск сервиса (например, FastAPI/Flask);
-- `src/utils/` — вспомогательные функции.
-
-Точки входа (скрипты, которые вы запускаете из командной строки), удобно оформлять как:
-
-- модули: `python -m src.train`, `python -m src.service`;
-- или скрипты в корне `src/`, например `src/train.py`, `src/service.py`.
-
-Опишите основные команды запуска в файле `project/README.md`.
+- `src/train.py` — точка входа для обучения.
+- `src/service.py` — точка входа FastAPI-приложения.
+- `src/aps_failure/data.py` — корректная загрузка UCI CSV, обработка `na`, сбор входного DataFrame для API.
+- `src/aps_failure/modeling.py` — фабрика моделей: Logistic Regression, Random Forest, HistGradientBoosting, MLP.
+- `src/aps_failure/metrics.py` — PR-AUC, recall/F1, confusion matrix и cost-sensitive threshold.
+- `src/aps_failure/train.py` — полный training pipeline и сохранение артефактов.
+- `src/aps_failure/service.py` — `/health`, `/metrics`, `/predict-failure`, `/predict`.
