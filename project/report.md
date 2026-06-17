@@ -53,7 +53,7 @@ EDA и воспроизводимый сценарий лежат в `notebooks/
 - `LogisticRegression` — линейный baseline с median imputation, missing indicators, scaling и `class_weight=balanced`;
 - `RandomForest` — ансамбль деревьев с median imputation, missing indicators и `balanced_subsample`;
 - `HistGradientBoosting` — градиентный бустинг sklearn с поддержкой пропусков и `class_weight=balanced`;
-- `MLP` — простая нейросеть для табличного baseline.
+- `MLP` — многослойный перцептрон для табличного baseline.
 
 Для каждой модели decision threshold подбирался на validation split по минимальной стоимости `10 * FP + 500 * FN`. Затем выбранный порог применялся к официальному UCI test set.
 
